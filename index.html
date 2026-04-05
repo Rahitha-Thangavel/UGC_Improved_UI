@@ -12,7 +12,7 @@
   <div class="site-shell">
     <header class="topbar">
       <div class="topbar__links">
-        <a href="#">You are here: Home</a>
+        <span id="breadcrumb">You are here: Home</span>
       </div>
       <div class="topbar__meta">
         <span id="current-date">Sunday, 05 April 2026</span>
@@ -302,40 +302,196 @@
 
           <div class="university-pane" data-university-pane="universities">
             <div class="university-cards">
-              <a href="#" class="university-card"><span class="university-logo">UC</span><span>University of
-                  Colombo</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UP</span><span>University of
-                  Peradeniya</span></a>
-              <a href="#" class="university-card"><span class="university-logo">USJ</span><span>University of Sri
-                  Jayewardenepura</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UK</span><span>University of
-                  Kelaniya</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UM</span><span>University of
-                  Moratuwa</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UJ</span><span>University of
-                  Jaffna</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UR</span><span>University of
-                  Ruhuna</span></a>
-              <a href="#" class="university-card"><span class="university-logo">OUSL</span><span>The Open University of
-                  Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">EUSL</span><span>Eastern University, Sri
-                  Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">SEUSL</span><span>South Eastern
-                  University of Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">RUSL</span><span>Rajarata University of
-                  Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">SUSL</span><span>Sabaragamuwa University
-                  of Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">WUSL</span><span>Wayamba University of
-                  Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UWU</span><span>Uva Wellassa University
-                  of Sri Lanka</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UVPA</span><span>University of the
-                  Visual & Performing Arts</span></a>
-              <a href="#" class="university-card"><span class="university-logo">GWIIM</span><span>Gampaha
-                  Wickramarachchi University of Indigenous Medicine</span></a>
-              <a href="#" class="university-card"><span class="university-logo">UVA</span><span>University of
-                  Vavuniya</span></a>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head">
+                  <span class="university-logo">UC</span>
+                  <span>University of Colombo</span>
+                </div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.cmb.ac.lk/" target="_blank" rel="noreferrer">http://www.cmb.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="colombo-faculties">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UP</span><span>University of Peradeniya</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Peradeniya. 20400 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.pdn.ac.lk/" target="_blank" rel="noreferrer">http://www.pdn.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Peradeniya" data-faculty-address="Peradeniya. 20400 Sri Lanka" data-faculty-website="http://www.pdn.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">USJ</span><span>University of Sri Jayewardenepura</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Gangodawila, Nugegoda. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.sjp.ac.lk/" target="_blank" rel="noreferrer">http://www.sjp.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Sri Jayewardenepura" data-faculty-address="Gangodawila, Nugegoda. Sri Lanka" data-faculty-website="http://www.sjp.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UK</span><span>University of Kelaniya</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Kelaniya. 11600 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.kln.ac.lk/" target="_blank" rel="noreferrer">http://www.kln.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Kelaniya" data-faculty-address="Kelaniya. 11600 Sri Lanka" data-faculty-website="http://www.kln.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UM</span><span>University of Moratuwa</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Katubedda, Moratuwa. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="https://uom.lk" target="_blank" rel="noreferrer">https://uom.lk</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Moratuwa" data-faculty-address="Katubedda, Moratuwa. Sri Lanka" data-faculty-website="https://uom.lk">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UJ</span><span>University of Jaffna</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>P.O.Box 57, Thirunelvely, Jaffna. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.jfn.ac.lk/" target="_blank" rel="noreferrer">http://www.jfn.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Jaffna" data-faculty-address="P.O.Box 57, Thirunelvely, Jaffna. Sri Lanka" data-faculty-website="http://www.jfn.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UR</span><span>University of Ruhuna</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Wellamadama, Matara. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.ruh.ac.lk/" target="_blank" rel="noreferrer">http://www.ruh.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Ruhuna" data-faculty-address="Wellamadama, Matara. Sri Lanka" data-faculty-website="http://www.ruh.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">OUSL</span><span>The Open University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Nawala, Nugegoda. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.ou.ac.lk/" target="_blank" rel="noreferrer">http://www.ou.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="The Open University of Sri Lanka" data-faculty-address="Nawala, Nugegoda. Sri Lanka" data-faculty-website="http://www.ou.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">EUSL</span><span>Eastern University, Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Vantharumoolai, Chenkalady. 30350 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.esn.ac.lk/" target="_blank" rel="noreferrer">http://www.esn.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Eastern University, Sri Lanka" data-faculty-address="Vantharumoolai, Chenkalady. 30350 Sri Lanka" data-faculty-website="http://www.esn.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">SEUSL</span><span>South Eastern University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>University Park, Oluvil. #32360 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.seu.ac.lk/" target="_blank" rel="noreferrer">http://www.seu.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="South Eastern University of Sri Lanka" data-faculty-address="University Park, Oluvil. #32360 Sri Lanka" data-faculty-website="http://www.seu.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">RUSL</span><span>Rajarata University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Mihintale. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.rjt.ac.lk/" target="_blank" rel="noreferrer">http://www.rjt.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Rajarata University of Sri Lanka" data-faculty-address="Mihintale. Sri Lanka" data-faculty-website="http://www.rjt.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">SUSL</span><span>Sabaragamuwa University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>P.O Box 02, Belihuloya. 70140 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.sab.ac.lk/" target="_blank" rel="noreferrer">http://www.sab.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Sabaragamuwa University of Sri Lanka" data-faculty-address="P.O Box 02, Belihuloya. 70140 Sri Lanka" data-faculty-website="http://www.sab.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">WUSL</span><span>Wayamba University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Kuliyapitiya. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.wyb.ac.lk/" target="_blank" rel="noreferrer">http://www.wyb.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Wayamba University of Sri Lanka" data-faculty-address="Kuliyapitiya. Sri Lanka" data-faculty-website="http://www.wyb.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UWU</span><span>Uva Wellassa University of Sri Lanka</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>2nd Mile Post, Passara Road, Badulla. 90000 Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.uwu.ac.lk/" target="_blank" rel="noreferrer">http://www.uwu.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Uva Wellassa University of Sri Lanka" data-faculty-address="2nd Mile Post, Passara Road, Badulla. 90000 Sri Lanka" data-faculty-website="http://www.uwu.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UVPA</span><span>University of the Visual & Performing Arts</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>No 21, Albert Crescent, Colombo 07. Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.vpa.ac.lk/" target="_blank" rel="noreferrer">http://www.vpa.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of the Visual & Performing Arts" data-faculty-address="No 21, Albert Crescent, Colombo 07. Sri Lanka" data-faculty-website="http://www.vpa.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">GWIIM</span><span>Gampaha Wickramarachchi University of Indigenous Medicine</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Kandy Road Yakkala Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://gwu.ac.lk/" target="_blank" rel="noreferrer">http://gwu.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="Gampaha Wickramarachchi University of Indigenous Medicine" data-faculty-address="Kandy Road Yakkala Sri Lanka" data-faculty-website="http://gwu.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
+              <article class="university-card university-card--detailed">
+                <div class="university-card__head"><span class="university-logo">UVA</span><span>University of Vavuniya</span></div>
+                <div class="university-card__details">
+                  <p><strong>Address</strong></p>
+                  <p>Pampaimadu, Vavuniya Sri Lanka</p>
+                  <p><strong>Website</strong></p>
+                  <p><a href="http://www.vau.ac.lk/" target="_blank" rel="noreferrer">http://www.vau.ac.lk/</a></p>
+                  <p><strong>Faculties</strong></p>
+                  <p><a href="#universities-section" data-university-view="faculty-placeholder" data-faculty-university="University of Vavuniya" data-faculty-address="Pampaimadu, Vavuniya Sri Lanka" data-faculty-website="http://www.vau.ac.lk/">View faculties</a></p>
+                </div>
+              </article>
             </div>
           </div>
 
@@ -385,6 +541,50 @@
             <div class="category-cards">
               <a href="#" class="category-card">South Asian University Information</a>
             </div>
+          </div>
+
+          <div class="university-pane" data-university-pane="colombo-faculties" hidden>
+            <article class="university-profile">
+              <div class="university-profile__header">
+                <div class="university-profile__logo">UC</div>
+                <div class="university-profile__intro">
+                  <h3>University of Colombo</h3>
+                  <p>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03. Sri Lanka</p>
+                  <p><a href="http://www.cmb.ac.lk/" target="_blank" rel="noreferrer">http://www.cmb.ac.lk/</a></p>
+                </div>
+              </div>
+              <div class="faculty-section">
+                <h4>Faculties</h4>
+                <div class="faculty-grid">
+                  <a href="#" class="faculty-link">Faculty of Arts <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Education <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Graduate Studies <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Law <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Management and Finance <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Medicine <span>No. 25, Kynsey Road, Colombo. 00800</span></a>
+                  <a href="#" class="faculty-link">Faculty of Science <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Technology <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                  <a href="#" class="faculty-link">Faculty of Nursing <span>'College House', 94, Cumaratunga Munidasa Mawatha, Colombo 03.</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="university-pane" data-university-pane="faculty-placeholder" hidden>
+            <article class="university-profile">
+              <div class="university-profile__header">
+                <div class="university-profile__logo" id="placeholder-faculty-logo">UNI</div>
+                <div class="university-profile__intro">
+                  <h3 id="placeholder-faculty-title">University Faculties</h3>
+                  <p id="placeholder-faculty-address"></p>
+                  <p><a id="placeholder-faculty-website" href="#" target="_blank" rel="noreferrer"></a></p>
+                </div>
+              </div>
+              <div class="faculty-section">
+                <h4>Faculties</h4>
+                <p>Faculty details for this university will be added when you send them.</p>
+              </div>
+            </article>
           </div>
         </section>
 

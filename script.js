@@ -16,6 +16,18 @@ const universityLinks = Array.from(document.querySelectorAll("[data-university-v
 const universitiesBackButton = document.getElementById("universities-back");
 const universitiesMenu = document.getElementById("universities-menu");
 const announcementToggles = Array.from(document.querySelectorAll(".announcement-toggle"));
+let currentUniversityView = "universities";
+const placeholderFacultyTitle = document.getElementById("placeholder-faculty-title");
+const placeholderFacultyAddress = document.getElementById("placeholder-faculty-address");
+const placeholderFacultyWebsite = document.getElementById("placeholder-faculty-website");
+const placeholderFacultyLogo = document.getElementById("placeholder-faculty-logo");
+const breadcrumb = document.getElementById("breadcrumb");
+
+const setBreadcrumb = (path) => {
+  if (breadcrumb) {
+    breadcrumb.textContent = `You are here: ${path}`;
+  }
+};
 
 if (dateTarget) {
   const now = new Date();
@@ -71,6 +83,9 @@ if (aboutSection && submenuLinks.length > 0 && aboutViewTitle && aboutTitleLink)
     if (homeContent) {
       homeContent.hidden = true;
     }
+    if (universitiesSection) {
+      universitiesSection.hidden = true;
+    }
     aboutPanes.forEach((pane) => {
       pane.hidden = pane.dataset.pane !== viewName;
     });
@@ -78,6 +93,7 @@ if (aboutSection && submenuLinks.length > 0 && aboutViewTitle && aboutTitleLink)
     const label = viewLabels[viewName] || "About Us";
     aboutTitleLink.textContent = label;
     aboutViewTitle.textContent = label;
+    setBreadcrumb(`Home > About us > ${label}`);
     aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -108,6 +124,7 @@ if (homeMenuLink) {
     }
     if (homeContent) {
       homeContent.hidden = false;
+      setBreadcrumb("Home");
       homeContent.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
@@ -123,6 +140,8 @@ if (universitiesSection && universitiesViewTitle && universityPanes.length > 0) 
     government: "Other Government Universities",
     foreign: "Recognized Foreign Universities",
     "south-asian": "South Asian University",
+    "colombo-faculties": "University of Colombo Faculties",
+    "faculty-placeholder": "University Faculties",
   };
 
   const showUniversityPane = (viewName) => {
@@ -138,7 +157,14 @@ if (universitiesSection && universitiesViewTitle && universityPanes.length > 0) 
       pane.hidden = pane.dataset.universityPane !== viewName;
     });
 
-    universitiesViewTitle.textContent = universityViewLabels[viewName] || "Universities";
+    currentUniversityView = viewName;
+    const label = universityViewLabels[viewName] || "Universities";
+    universitiesViewTitle.textContent = label;
+    if (viewName === "universities") {
+      setBreadcrumb("Home > Universities & Institutes > Universities");
+    } else {
+      setBreadcrumb(`Home > Universities & Institutes > ${label}`);
+    }
     universitiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -146,15 +172,45 @@ if (universitiesSection && universitiesViewTitle && universityPanes.length > 0) 
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const viewName = link.dataset.universityView;
+      if (
+        viewName === "faculty-placeholder" &&
+        placeholderFacultyTitle &&
+        placeholderFacultyAddress &&
+        placeholderFacultyWebsite &&
+        placeholderFacultyLogo
+      ) {
+        const universityName = link.dataset.facultyUniversity || "University";
+        const universityAddress = link.dataset.facultyAddress || "";
+        const universityWebsite = link.dataset.facultyWebsite || "#";
+        const initials = universityName
+          .split(" ")
+          .filter(Boolean)
+          .map((word) => word[0])
+          .join("")
+          .slice(0, 4)
+          .toUpperCase();
+
+        placeholderFacultyTitle.textContent = `${universityName} Faculties`;
+        placeholderFacultyAddress.textContent = universityAddress;
+        placeholderFacultyWebsite.textContent = universityWebsite;
+        placeholderFacultyWebsite.href = universityWebsite;
+        placeholderFacultyLogo.textContent = initials || "UNI";
+      }
       showUniversityPane(viewName);
       universitiesMenu?.classList.remove("is-open");
     });
   });
 
   universitiesBackButton?.addEventListener("click", () => {
+    if (currentUniversityView !== "universities") {
+      showUniversityPane("universities");
+      return;
+    }
+
     universitiesSection.hidden = true;
     if (homeContent) {
       homeContent.hidden = false;
+      setBreadcrumb("Home");
       homeContent.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
