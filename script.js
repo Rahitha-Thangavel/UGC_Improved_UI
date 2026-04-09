@@ -22,6 +22,9 @@ const placeholderFacultyAddress = document.getElementById("placeholder-faculty-a
 const placeholderFacultyWebsite = document.getElementById("placeholder-faculty-website");
 const placeholderFacultyLogo = document.getElementById("placeholder-faculty-logo");
 const breadcrumb = document.getElementById("breadcrumb");
+const searchForm = document.getElementById("site-search-form");
+const searchInput = document.getElementById("site-search-input");
+let showUniversityPane = null;
 
 const setBreadcrumb = (path) => {
   if (breadcrumb) {
@@ -144,7 +147,7 @@ if (universitiesSection && universitiesViewTitle && universityPanes.length > 0) 
     "faculty-placeholder": "University Faculties",
   };
 
-  const showUniversityPane = (viewName) => {
+  showUniversityPane = (viewName) => {
     universitiesSection.hidden = false;
     if (homeContent) {
       homeContent.hidden = true;
@@ -234,5 +237,53 @@ if (announcementToggles.length > 0) {
         panel.hidden = isExpanded;
       }
     });
+  });
+}
+
+if (searchForm && searchInput) {
+  const searchableTargets = Array.from(
+    document.querySelectorAll(
+      ".announcement, .welcome-card, .side-card, .university-card, .faculty-link, .footer-modern a, .icon-link, .about-info-card, .member-card"
+    )
+  );
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (!query) {
+      return;
+    }
+
+    const match = searchableTargets.find((element) =>
+      element.textContent.toLowerCase().includes(query)
+    );
+
+    if (match) {
+      if (match.closest(".announcement-panel")) {
+        const panel = match.closest(".announcement-panel");
+        const toggle = panel?.previousElementSibling;
+        if (toggle?.classList.contains("announcement-toggle")) {
+          toggle.setAttribute("aria-expanded", "true");
+          panel.hidden = false;
+        }
+      }
+
+      if (match.closest("[hidden]")) {
+        const hiddenPane = match.closest("[data-university-pane], [data-pane]");
+        if (hiddenPane?.dataset.universityPane) {
+          showUniversityPane?.(hiddenPane.dataset.universityPane);
+        }
+      }
+
+      match.scrollIntoView({ behavior: "smooth", block: "center" });
+      match.style.outline = "3px solid #f2b64d";
+      match.style.outlineOffset = "4px";
+
+      window.setTimeout(() => {
+        match.style.outline = "";
+        match.style.outlineOffset = "";
+      }, 2500);
+    }
   });
 }
